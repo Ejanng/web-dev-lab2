@@ -4,6 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enter a Diary?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #6A5ACD;
+        }
+
+        label {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        textarea {
+            width: 80%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="date"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"], #showDataButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #6A5ACD;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        input[type="submit"]:hover, #showDataButton:hover {
+            background-color: #483D8B;
+        }
+
+        #dataContainer {
+            margin-top: 20px;
+            display: none;
+        }
+
+        #notesList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #notesList li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to Someone's Diary!</h1>
@@ -20,10 +88,11 @@
 
     <button id="showDataButton">Show All Data</button>
 
-    <div id="dataContainer" style="display: none;">
+    <div id="dataContainer">
         <h2>Saved Notes:</h2>
         <ul id="notesList"></ul>
     </div>
+
     <script>
         // Array to store the notes
         const notesArray = [];
