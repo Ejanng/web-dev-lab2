@@ -162,7 +162,7 @@
             // Iterate over the notes array and add each note to the list
             notesArray.forEach(note => {
                 const li = document.createElement('li');
-                li.textContent = '<h1> test </h1>';
+                li.textContent = `Date: ${note.date}, Note: ${note.note}`;
                 notesList.appendChild(li);
             });
             
