@@ -1,1 +1,67 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Date and Note</title>
+</head>
+<body>
+    <h1>Enter Date and Add Note</h1>
+
+    <form id="noteForm">
+        <label for="date">Choose a date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="note">Add a note:</label><br>
+        <textarea id="note" name="note" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Save Note">
+    </form>
+
+    <h2>Saved Notes:</h2>
+    <ul id="notesList"></ul>
+
+    <script>
+        // Array to store the notes
+        const notesArray = [];
+
+        // Handle form submission
+        document.getElementById('noteForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get the date and note values from the form
+            const date = document.getElementById('date').value;
+            const note = document.getElementById('note').value;
+
+            // Create a new note object
+            const newNote = {
+                date: date,
+                note: note
+            };
+
+            // Add the new note to the array
+            notesArray.push(newNote);
+
+            // Clear the input fields
+            document.getElementById('date').value = '';
+            document.getElementById('note').value = '';
+
+            // Update the displayed notes list
+            updateNotesList();
+        });
+
+        // Function to update the notes list on the page
+        function updateNotesList() {
+            const notesList = document.getElementById('notesList');
+            notesList.innerHTML = ''; // Clear the current list
+
+            // Iterate over the notes array and add each note to the list
+            notesArray.forEach(note => {
+                const li = document.createElement('li');
+                li.textContent = `Date: ${note.date}, Note: ${note.note}`;
+                notesList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
