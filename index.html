@@ -143,6 +143,8 @@
                 updateNotesList(notesList); // Update list when showing data
                 if (notesArray.length === 0) {
                     noDataFound.style.display = 'block';
+                } else {
+                    noDataFound.style.display = 'none';
                 }
             } else {
                 dataContainer.style.display = 'none';
