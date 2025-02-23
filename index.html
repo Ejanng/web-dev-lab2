@@ -9,7 +9,7 @@
     <h1>Welcome to Someone's Diary!</h1>
 
     <form id="noteForm">
-        <label for="date">Choose a date:</label>
+        <label for="date">Enter a Date:</label>
         <input type="date" id="date" name="date" required><br><br>
 
         <label for="note">What are you feeling today?</label><br>
@@ -27,6 +27,9 @@
     <script>
         // Array to store the notes
         const notesArray = [];
+
+        const today = new Date().toISOString().split('T')[0]; // Get current date in YYYY-MM-DD format
+        document.getElementById('date').value = today;
 
         // Handle form submission
         document.getElementById('noteForm').addEventListener('submit', function(event) {
