@@ -143,8 +143,6 @@
                 updateNotesList(notesList); // Update list when showing data
                 if (notesArray.length === 0) {
                     noDataFound.style.display = 'block';
-                } else {
-                    noDataFound.style.display = 'none';
                 }
             } else {
                 dataContainer.style.display = 'none';
@@ -161,7 +159,9 @@
         // Function to update the notes list on the page
         function updateNotesList() {
             const notesList = document.getElementById('notesList');
+            const noDataFound = document.getElementById('noDataFound');
             notesList.innerHTML = ''; // Clear the current list
+            noDataFound.style.display = 'none';
 
             // Iterate over the notes array and add each note to the list
             notesArray.forEach(note => {
@@ -169,6 +169,7 @@
                 li.textContent = `Date: ${note.date}, Note: ${note.note}`;
                 notesList.appendChild(li);
             });
+            
         }
     </script>
 </body>
