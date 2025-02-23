@@ -211,9 +211,9 @@
             if (notesArray.length === 0) {
                 noDataFound.style.display = 'block';
             } else {
-                notesArray.forEach((note, index) => {
+                notesArray.forEach((date, index) => {
                     const li = document.createElement('li');
-                    li.textContent = `Date: ${note.date}, Note: ${note.note}`;
+                    li.textContent = `Date: ${date.date}, Note: ${date.note}`;
 
                     // Create the remove button
                     const removeButton = document.createElement('button');
