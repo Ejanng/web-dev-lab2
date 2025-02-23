@@ -67,6 +67,13 @@
             } else {
                 dataContainer.style.display = 'none';
             }
+
+            // Change inner text
+            if (button.innerText === "Show All Data") {
+                button.innerText = "Hide Data";
+            } else {
+                button.innerText = "Show All Data";
+            }
         });
 
         // Function to update the notes list on the page
