@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enter Date and Note</title>
+    <title>Enter a Diary?</title>
 </head>
 <body>
-    <h1>Enter Date and Add Note</h1>
+    <h1>Welcome to Someones Diary!</h1>
 
     <form id="noteForm">
         <label for="date">Choose a date:</label>
         <input type="date" id="date" name="date" required><br><br>
 
-        <label for="note">Add a note:</label><br>
+        <label for="note">Enter a short Note?</label><br>
         <textarea id="note" name="note" rows="4" cols="50" required></textarea><br><br>
 
         <input type="submit" value="Save Note">
     </form>
+    
+    <div id="confirmationMessage">Note saved successfully!</div>
 
-    <h2>Saved Notes:</h2>
-    <ul id="notesList"></ul>
+    <button id="showDataButton">Show All Data</button>
 
+    <div id="dataContainer" style="display: none;">
+        <h2>Saved Notes:</h2>
+        <ul id="notesList"></ul>
+    </div>
     <script>
         // Array to store the notes
         const notesArray = [];
@@ -48,6 +53,19 @@
 
             // Update the displayed notes list
             updateNotesList();
+        });
+
+        document.getElementById('showDataButton').addEventListener('click', function() {
+            const dataContainer = document.getElementById('dataContainer');
+            const notesList = document.getElementById('notesList');
+
+            // Toggle visibility of data container
+            if (dataContainer.style.display === 'none') {
+                dataContainer.style.display = 'block';
+                updateNotesList(notesList); // Update list when showing data
+            } else {
+                dataContainer.style.display = 'none';
+            }
         });
 
         // Function to update the notes list on the page
