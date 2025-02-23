@@ -96,6 +96,7 @@
 
     <div id="dataContainer" style="display: none;">
         <h2>Saved Notes:</h2>
+        <p id="noDataFound" style="display: none">No Data Found!</p>
         <ul id="notesList"></ul>
     </div>
     <script>
@@ -134,11 +135,15 @@
             var button = document.getElementById('showDataButton');
             const dataContainer = document.getElementById('dataContainer');
             const notesList = document.getElementById('notesList');
+            const noDataFound = document.getElementById('noDataFound');
 
             // Toggle visibility of data container
             if (dataContainer.style.display === 'none') {
                 dataContainer.style.display = 'block';
                 updateNotesList(notesList); // Update list when showing data
+                if (noteList.length === 0) {
+                    noDataFound.style.display = 'block';
+                }
             } else {
                 dataContainer.style.display = 'none';
             }
