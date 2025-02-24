@@ -112,7 +112,7 @@ function updateNotesList() {
     } else {
         notesArray.forEach((note, index) => {
             const li = document.createElement('li');
-            li.textContent = `${note.date} \n\t ${note.note}`;
+            li.textContent = `${note.date} | ${note.note}`;
 
             // Create the remove button
             const removeButton = document.createElement('button');
