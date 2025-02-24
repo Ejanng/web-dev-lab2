@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;  /* Dark background color */
+    color: #e0e0e0;  /* Light text for contrast */
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #BB86FC;  /* Soft purple for the title */
+}
+
+label {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #e0e0e0;
+}
+
+textarea {
+    width: 80%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #333;  /* Dark background for text area */
+    color: #fff;  /* White text */
+}
+
+input[type="date"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #333;  /* Dark background for input */
+    color: #fff;  /* White text */
+}
+
+input[type="submit"], #showDataButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #BB86FC;  /* Light purple for buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+input[type="submit"]:hover, #showDataButton:hover {
+    background-color: #9C4DFF;  /* Darker purple on hover */
+}
+
+#dataContainer {
+    margin-top: 20px;
+    display: none;
+}
+
+#notesList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#notesList li {
+    background-color: #333;  /* Dark background for list items */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    color: #e0e0e0;  /* Light text for notes */
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+button {
+    margin-left: 10px;
+    background-color: #FF6B6B;  /* Red background for the delete button */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FF4C4C;  /* Darker red on hover */
+}
