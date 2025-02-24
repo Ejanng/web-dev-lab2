@@ -1,4 +1,3 @@
-
 // Linked List Node
 class Node {
     constructor(date, note) {
