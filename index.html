@@ -76,6 +76,23 @@
             border: 1px solid #444;
             color: #e0e0e0;  /* Light text for notes */
             text-align: left;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        button {
+            margin-left: 10px;
+            background-color: #FF6B6B;  /* Red background for the delete button */
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #FF4C4C;  /* Darker red on hover */
         }
     </style>
 </head>
@@ -211,16 +228,21 @@
             if (notesArray.length === 0) {
                 noDataFound.style.display = 'block';
             } else {
-                notesArray.forEach((date, index) => {
+                notesArray.forEach((note, index) => {
                     const li = document.createElement('li');
-                    li.textContent = `Date: ${date.date}, Note: ${date.note}`;
+                    li.textContent = `Date: ${note.date}, Note: ${note.note}`;
 
                     // Create the remove button
                     const removeButton = document.createElement('button');
                     removeButton.textContent = 'Delete';
+                    
+                    // Add confirmation before deletion
                     removeButton.addEventListener('click', function() {
-                        notesLinkedList.removeAt(index);  // Remove the note at this index
-                        updateNotesList();  // Re-render the list after removal
+                        const confirmation = confirm("Are you sure you want to delete this note?");
+                        if (confirmation) {
+                            notesLinkedList.removeAt(index);  // Remove the note at this index
+                            updateNotesList();  // Re-render the list after removal
+                        }
                     });
 
                     // Append the remove button to the list item
