@@ -61,7 +61,7 @@ input[type="submit"]:hover, #showDataButton:hover {
     padding: 0;
 }
 
-#notesList li {
+#notesList ul {
     background-color: #333;  /* Dark background for list items */
     padding: 10px;
     margin-bottom: 10px;
