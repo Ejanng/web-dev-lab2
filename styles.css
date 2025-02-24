@@ -58,7 +58,7 @@ input[type="submit"]:hover, #showDataButton:hover {
     margin-left: auto; 
     margin-right: auto;
     padding: 20px;
-    background-color: #333;  /* Dark background color for the container */
+    background-color: #fff;  /* Dark background color for the container */
     border-radius: 8px;
     color: #e0e0e0;  /* Light text color to match the dark background */
 }
